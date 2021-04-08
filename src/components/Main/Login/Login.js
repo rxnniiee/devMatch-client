@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import styles from './Login.module.scss';
+import { useSelector } from 'react-redux';
 
 const Login = () => {
+    const employees = useSelector((state) => state.employees)
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
@@ -21,7 +23,7 @@ const Login = () => {
     return (
         <div className={styles.Login}>
             <form onSubmit={onSubmitHandler}>
-                <h2>Login</h2>
+                <h2>[LOGO]</h2>
                 <div className={styles.loginInputGroup}>
                     <label htmlFor="username">Username</label>
                     <input onChange={usernameOnChangeHandler} id="username" name="username"></input>
@@ -30,7 +32,7 @@ const Login = () => {
                     <label htmlFor="password">Password</label>
                     <input onChange={passwordOnChangeHandler} id="password" name="password"></input>
                 </div>
-                <button>Submit</button>
+                <button>Login</button>
             </form>
         </div>
     )
