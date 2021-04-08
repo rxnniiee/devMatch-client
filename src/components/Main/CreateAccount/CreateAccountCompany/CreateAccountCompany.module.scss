@@ -1,7 +1,7 @@
-.Login {
+.CreateAccountCompany {
     margin: 0 auto;
     width: 200px;
-    margin-top: 40vh;
+    margin-top: 10vh;
     form {
         h2 {
             width: 200px;
@@ -27,7 +27,9 @@
             border: none;
             height: 30px;
             border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 3rem;
         }
     }
 }
-

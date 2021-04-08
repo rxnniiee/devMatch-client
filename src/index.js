@@ -2,9 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider  } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { employeeReducer, employerReducer } from './store/reducers';
+import reduxThunk from 'redux-thunk';
 
-ReactDOM.render(<Router>
-    <App /></Router>,
+const rootReducer = combineReducers({
+  employees: employeeReducer,
+  employers: employerReducer,
+})
+
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(reduxThunk))
+  );
+
+ReactDOM.render(<Provider store={store}>
+    <App /></Provider>,
   document.getElementById('root')
 );
