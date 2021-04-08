@@ -1,0 +1,23 @@
+.CreateAccount {
+    margin: 0 auto;
+    width: 200px;
+    margin-top: 40vh;
+
+    h2 {
+        width: 200px;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+    
+    button {
+        width: 200px;
+        border: none;
+        height: 30px;
+        border-radius: 5px;
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+}

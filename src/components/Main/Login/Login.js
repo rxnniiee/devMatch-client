@@ -3,20 +3,11 @@ import styles from './Login.module.scss';
 import { useSelector } from 'react-redux';
 
 const Login = () => {
-    const employees = useSelector((state) => state.employees)
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
-
-    const usernameOnChangeHandler = (e) => {
-        setUsername(e.target.value);
-    }
-
-    const passwordOnChangeHandler = (e) => {
-        setPassword(e.target.value);
-    }
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
+        const username = e.target.username.value;
+        const password = e.target.password.value;
         console.log('username: ' + username, 'password: ' + password);
     }
 
@@ -26,11 +17,11 @@ const Login = () => {
                 <h2>[LOGO]</h2>
                 <div className={styles.loginInputGroup}>
                     <label htmlFor="username">Username</label>
-                    <input onChange={usernameOnChangeHandler} id="username" name="username"></input>
+                    <input required type="text" id="username" name="username"></input>
                 </div>
                 <div className={styles.loginInputGroup}>
                     <label htmlFor="password">Password</label>
-                    <input onChange={passwordOnChangeHandler} id="password" name="password"></input>
+                    <input required type="password" id="password" name="password"></input>
                 </div>
                 <button>Login</button>
             </form>
