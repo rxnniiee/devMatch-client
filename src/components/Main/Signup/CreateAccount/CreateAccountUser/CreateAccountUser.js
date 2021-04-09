@@ -1,31 +1,23 @@
 import React, { useState } from 'react';
-import styles from './CreateAccountCompany.module.scss';
+import styles from './CreateAccountUser.module.scss';
 
 export default function CreateAccountCompany() {
-    const [company, setCompany] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        const company = e.target.company.value;
+
         const email = e.target.email.value;
         const password = e.target.password.value;
         const confirmPassword = e.target.confirmPassword.value;
-        console.log('company:' + company, ', email: ' + email, ', password: ' + password + ', confirmed password: ' + confirmPassword);
+
+        console.log('email: ' + email, ', password: ' + password + ', confirmed password: ' + confirmPassword);
     }
 
     return (
-        <div className={styles.CreateAccountCompany}>
+        <div className={styles.CreateAccountUser}>
             <form onSubmit={onSubmitHandler}>
 
-                <h3>Create Account</h3>
-
-                <div className={styles.loginInputGroup}>
-                    <label htmlFor="company">Company*</label>
-                    <input required type="text" id="company" name="company"></input>
-                </div>
+                <h3>Create Profile</h3>
 
                 <div className={styles.loginInputGroup}>
                     <label htmlFor="email">Email*</label>
