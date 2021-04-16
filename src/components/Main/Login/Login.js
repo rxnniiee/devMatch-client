@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import styles from './Login.module.scss';
-import { useSelector } from 'react-redux';
 
 const Login = () => {
 

@@ -7,7 +7,8 @@ import Login from './Login/Login';
 import CreateAccount from './CreateAccount/CreateAccount';
 import CreateAccountCompany from './CreateAccount/CreateAccountCompany/CreateAccountCompany';
 import CreateAccountUser from './CreateAccount/CreateAccountUser/CreateAccountUser'
-import EmployeeMatches from './EmployeeMatches/EmployeeMatches';
+import EmployeeMatches from './EmployeePages/EmployeeMatches/EmployeeMatches';
+import EmployeeChat from './EmployeePages/EmployeeChat/EmployeeChat';
 
 //styles
 import styles from './Main.module.scss';
@@ -33,6 +34,9 @@ const Main = () => {
                 </Route>
                 <Route path="/employee/matches">
                     <EmployeeMatches />
+                </Route>
+                <Route path="/employee/chat">
+                    <EmployeeChat/>
                 </Route>
                 
             </Switch>

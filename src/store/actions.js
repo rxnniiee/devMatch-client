@@ -1,5 +1,7 @@
 export const CREATE_EMPLOYEE = 'CREATE_EMPLOYEE';
 export const CREATE_EMPLOYER = 'CREATE_EMPLOYER';
+export const ADD_CHAT = 'ADD_CHAT';
+export const ADD_MATCH = 'ADD_MATCH';
 
 export const addEmployee = (newEmployee) => {
     return (dispatch) => {
@@ -18,3 +20,21 @@ export const addEmployer = (newEmployer) => {
         })
     }
 } 
+
+export const addChat = (newChat) => {
+    return (dispatch) => {
+        dispatch({
+            type: ADD_CHAT,
+            payload: newChat
+        })
+    }
+}
+
+export const addMatch = (newMatch) => {
+    return (dispatch) => {
+        dispatch({
+            type: ADD_MATCH,
+            payload: newMatch
+        })
+    }
+}

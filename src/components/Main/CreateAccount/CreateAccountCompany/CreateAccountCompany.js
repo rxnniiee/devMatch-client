@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import styles from './CreateAccountCompany.module.scss';
 
 export default function CreateAccountCompany() {
-    const [company, setCompany] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
