@@ -12,3 +12,25 @@ npm start
 - Redux is used for state that is shared between components
 - Internal state is used for state that is needed only for that specific component
 - Main headers on pages are h3
+
+## Redux state structure
+
+```js
+state: {
+    employee: {
+        id: number,
+        username: string,
+        matches: object[],
+    },
+    employer: {
+        id: number,
+        companyName: string,
+        openPositions: [
+            {
+                position: string,
+                matches: object[],
+            }
+        ]
+    }
+}
+```
