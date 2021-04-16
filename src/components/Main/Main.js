@@ -8,6 +8,8 @@ import CreateAccount from "./CreateAccount/CreateAccount";
 import CreateAccountCompany from "./CreateAccount/CreateAccountCompany/CreateAccountCompany";
 import CreateAccountUser from "./CreateAccount/CreateAccountUser/CreateAccountUser";
 import CreateProfile from "../Main/CreateProfile/CreateProfile";
+import EmployeeMatches from "./EmployeeMatches/EmployeeMatches";
+
 //styles
 import styles from "./Main.module.scss";
 
@@ -32,6 +34,9 @@ const Main = () => {
         </Route>
         <Route path="/create-account/create-profile">
           <CreateProfile />
+        </Route>
+        <Route path="/employee/matches">
+          <EmployeeMatches />
         </Route>
       </Switch>
     </div>

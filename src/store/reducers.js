@@ -28,7 +28,7 @@ const intialStateEmployee = [{
     firstname: 'Miia',
     lastname: 'Dockerniemi',
     skills: ['HTML/CSS', 'Javascript', 'React'],
-    bio: 'Eat, sleep, code, reapeat',
+    bio: 'Eat, sleep, code, repeat',
 },
 {
     firstname: 'Markku',
