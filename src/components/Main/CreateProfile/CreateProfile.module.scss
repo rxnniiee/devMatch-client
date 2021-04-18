@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.control {
+  background-color: rgb(255, 255, 255);
+  width: 20rem;
+  min-height: 85vh;
+  padding-top: 1rem;
+  margin: auto;
+  margin-top: 3rem;
+  border: 0.1rem solid black;
+  border-radius: 2.4rem;
+
+  input {
+    border-radius: 0.4rem;
+    width: 18rem;
+    height: 2rem;
+    padding: 1rem 1rem;
+  }
+  input:focus {
+    outline: none;
+    border-color: #240370;
+    background-color: #e0d4fd;
+  }
+  textarea {
+    height: 5rem;
+    width: 18rem;
+    border-radius: 0.4rem;
+  }
+  textarea:focus {
+    outline: none;
+    border-color: #240370;
+    background-color: #e0d4fd;
+  }
+  select {
+    padding: 0.3rem;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  .Form {
+    padding-left: 1rem;
+    label {
+      display: block;
+      padding: 1rem 1rem;
+      font-size: 1.3rem;
+    }
+  }
+  .error {
+    color: crimson;
+  }
+  button {
+    background: linear-gradient(rgb(243, 181, 88), rgb(249, 122, 95));
+    width: 18rem;
+    border-radius: 0.4rem;
+    height: 2.3rem;
+    font-size: 1rem;
+    margin: 1rem 1rem;
+  }
+}
