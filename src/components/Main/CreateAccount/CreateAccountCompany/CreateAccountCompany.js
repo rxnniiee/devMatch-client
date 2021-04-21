@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import styles from './CreateAccountCompany.module.scss';
+import React, { useState } from "react";
+import styles from "./CreateAccountCompany.module.scss";
+import { Link } from "react-router-dom";
 
 export default function CreateAccountCompany() {
 
@@ -42,6 +43,24 @@ export default function CreateAccountCompany() {
 
             </form>
 
+        <div className={styles.loginInputGroup}>
+          <label htmlFor="password">Password*</label>
+          <input required type="password" id="password" name="password"></input>
         </div>
-    )
+
+        <div className={styles.loginInputGroup}>
+          <label htmlFor="confrim-password">Confirm Password*</label>
+          <input
+            required
+            type="password"
+            id="confirmPassword"
+            name="confirm-password"
+          ></input>
+        </div>
+
+        <Link to="create-profile">
+          <button>Create Account</button>
+        </Link>
+    </div>
+  );
 }
