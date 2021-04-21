@@ -115,7 +115,7 @@ const CreateProfile = (props) => {
           )}
         </div>
         <div>
-          <button disabled={!FormIsValid}>Create Profile</button>
+          <button disabled={!FormIsValid}>Confirm</button>
         </div>
       </div>
     </form>
