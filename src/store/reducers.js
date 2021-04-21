@@ -13,7 +13,7 @@ const employeeReducer = (state = intialStateEmployee, action) => {
 }
 
 // keeps track of which company is logged in
-const employerReducer = (state = null, action) => {
+const employerReducer = (state = initialStateEmployer, action) => {
     switch (action.type) {
         case actionTypes.CREATE_EMPLOYER:
             return { ...state, employer: state.employer.concat({ value: action.payload }) }
@@ -22,27 +22,28 @@ const employerReducer = (state = null, action) => {
     }
 }
 
-//keeps track of the chat. Should it be inside both employeeReducer and employerReducer, though?
-const chatReducer = (state = initialStateChat, action) => {
-    switch (action.type) {
-        case actionTypes.ADD_CHAT:
-            return { ...state, chat: state.chat.concat({ value: action.payload }) }
-        default:
-            return state;
-    }
-}
-
-export { employeeReducer, employerReducer, chatReducer };
+export { employeeReducer, employerReducer };
 
 //initial states
 const intialStateEmployee = {
-    firstname: 'Balthazar',
-    lastname: 'Kubernetius',
-    skills: ['HTML/CSS', 'Javascript', 'React'],
-    bio: 'I am devloperz',
+    profile: {
+        id: 2
+    },
+    queue: [
+        {
+            OpenPositionId: 10
+        },
+        {
+            OpenPositionId: 11
+        },
+        {
+            OpenPositionId: 12
+        },
+
+    ],
     matches: [
         {
-            id: 1,
+            id: 20,
             company: 'Amazing Tech',
             position: 'Junior Full-Stack Developer',
             preferableSkills: [
@@ -50,7 +51,7 @@ const intialStateEmployee = {
             ]
         },
         {
-            id: 2,
+            id: 21,
             company: 'Amazing Tech',
             position: 'Junior Full-Stack Developer',
             preferableSkills: [
@@ -58,7 +59,7 @@ const intialStateEmployee = {
             ]
         },
         {
-            id: 3,
+            id: 22,
             company: 'Amazing Tech',
             position: 'Junior Full-Stack Developer',
             preferableSkills: [
@@ -66,7 +67,7 @@ const intialStateEmployee = {
             ]
         },
         {
-            id: 4,
+            id: 23,
             company: 'Amazing Tech',
             position: 'Junior Full-Stack Developer',
             preferableSkills: [
@@ -76,9 +77,30 @@ const intialStateEmployee = {
     ]
 }
 
-const initialStateChat = [
-    { senderId: 1, message: 'test' },
-    { senderId: 2, message: 'test' },
-    { senderId: 1, message: 'test' },
-    { senderId: 1, message: 'test' }
-]
+const initialStateEmployer = {
+    profile: {
+        id: 30
+    },
+    openPositions: [
+        {
+            positionId: 40,
+            queue: [
+                {
+                    employeeId: 41
+                }
+            ],
+            matches: [
+                {
+                    userId: 1,
+                    chat: [
+                        {
+                            senderId: 20,
+                            message: 'This is a test chat message',
+                            date: new Date()
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

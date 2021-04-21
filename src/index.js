@@ -5,13 +5,12 @@ import App from './App';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider  } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { employeeReducer, employerReducer, chatReducer } from './store/reducers';
+import { employeeReducer, employerReducer} from './store/reducers';
 import reduxThunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
   employee: employeeReducer,
-  employer: employerReducer,
-  chats: chatReducer
+  employer: employerReducer
 })
 
 const store = createStore(
