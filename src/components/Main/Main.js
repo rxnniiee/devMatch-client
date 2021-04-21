@@ -8,9 +8,17 @@ import CreateAccount from './CreateAccount/CreateAccount';
 import CreateAccountCompany from './CreateAccount/CreateAccountCompany/CreateAccountCompany';
 import CreateAccountUser from './CreateAccount/CreateAccountUser/CreateAccountUser'
 import EmployeeMatches from './EmployeeMatches/EmployeeMatches';
+import Profile from '../EmployeeProfile/EeProfile'
 
 //styles
 import styles from './Main.module.scss';
+
+const mockdata = {
+    name: "testname",
+    specicalty: "Fullstack",
+    jobType: "fulltime"
+
+}
 
 const Main = () => {
     return (
@@ -33,6 +41,9 @@ const Main = () => {
                 </Route>
                 <Route path="/employee/matches">
                     <EmployeeMatches />
+                </Route>
+                <Route path="/profile">
+                    <Profile {...mockdata}/>
                 </Route>
                 
             </Switch>
