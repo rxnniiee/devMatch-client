@@ -1,5 +1,5 @@
-import React  from 'react';
-import { Route, Switch, } from 'react-router-dom';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 
 //components
 import LandingPage from './LandingPage/LandingPage';
@@ -11,7 +11,7 @@ import EmployeeMatches from './EmployeeMatches/EmployeeMatches';
 import Profile from '../EmployeeProfile/EeProfile'
 
 //styles
-import styles from './Main.module.scss';
+import styles from "./Main.module.scss";
 
 const mockdata = {
     name: "testname",
