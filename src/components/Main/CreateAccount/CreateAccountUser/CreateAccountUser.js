@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./CreateAccountUser.module.scss";
 import { Link } from "react-router-dom";
 
-export default function CreateAccountCompany() {
+export default function CreateAccountUser() {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -16,6 +16,7 @@ export default function CreateAccountCompany() {
 
   return (
     <div className={styles.CreateAccountUser}>
+      <div className={styles.backArrow}><Link to="/create-account">back</Link></div>
       <form onSubmit={onSubmitHandler}>
         <h3>Create Account</h3>
 
