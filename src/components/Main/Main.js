@@ -7,7 +7,7 @@ import Login from "./Login/Login";
 import CreateAccount from "./CreateAccount/CreateAccount";
 import CreateAccountCompany from "./CreateAccount/CreateAccountCompany/CreateAccountCompany";
 import CreateAccountUser from "./CreateAccount/CreateAccountUser/CreateAccountUser";
-import EmployeeMatches from "./EmployeeMatches/EmployeeMatches";
+import EmployeeMatches from "./EmployeePages/EmployeeMatches/EmployeeMatches";
 import Profile from "../EmployeeProfile/EeProfile";
 import CreateProfile from "./CreateProfile/CreateProfile";
 
