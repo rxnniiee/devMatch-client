@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Login.module.scss';
 
 const Login = () => {
@@ -12,8 +13,9 @@ const Login = () => {
 
     return (
         <div className={styles.Login}>
-            <form onSubmit={onSubmitHandler}>
-                <h2>[LOGO]</h2>
+            <form>
+            <div className={styles.backArrow}><Link to="/">back</Link></div>
+                <h3>Sign In</h3>
                 <div className={styles.loginInputGroup}>
                     <label htmlFor="username">Username</label>
                     <input required type="text" id="username" name="username"></input>
@@ -22,8 +24,8 @@ const Login = () => {
                     <label htmlFor="password">Password</label>
                     <input required type="password" id="password" name="password"></input>
                 </div>
-                <button>Login</button>
             </form>
+            <button onClick={onSubmitHandler}>Sign In</button>
         </div>
     )
 }

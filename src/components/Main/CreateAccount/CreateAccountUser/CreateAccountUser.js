@@ -16,6 +16,7 @@ export default function CreateAccountCompany() {
 
   return (
     <div className={styles.CreateAccountUser}>
+      <div className={styles.backArrow}><Link to="/create-account">back</Link></div>
       <form onSubmit={onSubmitHandler}>
         <h3>Create Account</h3>
 
