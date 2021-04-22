@@ -14,12 +14,6 @@ import CreateProfile from "./CreateProfile/CreateProfile";
 //styles
 import styles from "./Main.module.scss";
 
-const mockdata = {
-  name: "testname",
-  specicalty: "Fullstack",
-  jobType: "fulltime",
-};
-
 const Main = () => {
   return (
     <div className={styles.Main}>
@@ -46,7 +40,7 @@ const Main = () => {
           <CreateProfile />
         </Route>
         <Route path="/profile">
-          <Profile {...mockdata} />
+          <Profile />
         </Route>
       </Switch>
     </div>

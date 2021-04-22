@@ -1,13 +1,49 @@
-.profile {
-    margin: 0 auto;
-    width: 200px;
-    margin-top: 40vh;
+@import '../scss/variables.scss';
 
+.profile {
+    padding: 1rem 0;
+    width:100%;
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    background: $linear-gradient;
+    color: white;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .backArrow {
+        width: 100%;
+        padding: 0 2rem;
+    }
+
+    .skills {
+        width: 300px;
+    }
+
+    .introduction {
+        border-radius: 30px;
+        line-height: 1.5;
+    }
+
+    .city {
+        margin-bottom: 1rem;
+    }
 
     img {
-        height: 150px;
         width: 300px;
-        border-radius: 5px
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    h1, h2, h3 {
+        margin: 0.5rem;
     }
 
     h1{
@@ -19,8 +55,8 @@
     }
 
     h3 {
-        font: 0.5em sans-serif;
-        width: 200px;
+        font: 0.8em sans-serif;
+        width: 300px;
         text-align: left;
     }
 }
