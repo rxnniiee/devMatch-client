@@ -40,7 +40,7 @@ const Main = () => {
           <CreateProfile />
         </Route>
         <Route path="/profile">
-          <Profile {...mockdata} />
+          <Profile />
         </Route>
       </Switch>
     </div>

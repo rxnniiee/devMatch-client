@@ -30,7 +30,7 @@ const intialStateEmployee = {
         id: 1,
         name: 'Test employee',
         image: 'https://images.unsplash.com/photo-1567890279179-837d5692f45e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80',
-        specialty: 'Full Stack',
+        specialty: 'Full Stack Developer',
         skills: ['HTML', 'CSS', 'Javascript', 'React.JS', 'Node.JS', 'SQL'],
         jobType: 'Full-Time',
         city: 'Helsinki',

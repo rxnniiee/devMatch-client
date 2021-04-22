@@ -11,9 +11,10 @@ const Profile =() => {
             <img alt={`${employeeProfile.name} profile image`} src={employeeProfile.image}></img>
             <div>
                 <h1>{employeeProfile.name}</h1>
-                <h2>{employeeProfile.speciality}</h2>
-                <h2>{employeeProfile.jobType}</h2>
-                <h3>{employeeProfile.city}</h3>
+                <h2>{employeeProfile.specialty}</h2>
+                <h2>Looking for {employeeProfile.jobType} job</h2>
+                <h2 className={styles.skills}>Skills: {employeeProfile.skills.map(skill => skill + ' ')}</h2>
+                <h2 className={styles.city}><i class="fas fa-map-marker-alt"></i> {employeeProfile.city}</h2>
                 <h2>Introduction</h2>
                 <h3 className={styles.introduction}>{employeeProfile.introduction}</h3>
             </div>
