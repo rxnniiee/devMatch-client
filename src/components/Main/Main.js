@@ -9,6 +9,7 @@ import CreateAccountCompany from "./CreateAccount/CreateAccountCompany/CreateAcc
 import CreateAccountUser from "./CreateAccount/CreateAccountUser/CreateAccountUser";
 import EmployeeMatches from "./EmployeePages/EmployeeMatches/EmployeeMatches";
 import Profile from "../EmployeeProfile/EeProfile";
+import Offer from "../JobOffer/JobOffer"
 import CreateProfile from "./CreateProfile/CreateProfile";
 import Header from '../Header/Header';
 
@@ -44,6 +45,9 @@ const Main = () => {
         <Route path="/profile">
           <Header />
           <Profile />
+        </Route>
+        <Route path="/JobOpening">
+          <Offer />
         </Route>
       </Switch>
     </div>

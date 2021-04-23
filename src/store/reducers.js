@@ -39,6 +39,7 @@ const intialStateEmployee = {
     queue: [
         {
             OpenPositionId: 10,
+            image: 'https://images.unsplash.com/photo-1528901166007-3784c7dd3653?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80',
             name: 'Test Company',
             speciality: 'Full-Stack Developer',
             skills: ['HTML', 'CSS', 'Javascript', 'React.JS', 'Node.JS', 'SQL'],
