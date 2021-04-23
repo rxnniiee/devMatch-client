@@ -1,8 +1,8 @@
 @import '../scss/variables.scss';
 
 .queue {
-    padding: 1rem 0;
-    width:100%;
+    padding: 4rem 0;
+    width: 100%;
     min-height: 100vh;
     height: fit-content;
     display: flex;
@@ -58,5 +58,19 @@
         font: 0.8em sans-serif;
         width: 300px;
         text-align: left;
+    }
+
+    .thumbs {
+        width: 100%;
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        font-size: 3rem;
+        &Up{
+            color: rgb(147, 204, 147);
+        }
+        &Down {
+            color: rgb(203, 75, 75);
+        }
     }
 }

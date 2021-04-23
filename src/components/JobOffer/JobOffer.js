@@ -17,6 +17,10 @@ const Offer =() => {
                 <h2 className={styles.city}><i class="fas fa-map-marker-alt"></i> {jobOpenings[0].city}</h2>
                 <h2>Job description</h2>
                 <h3 className={styles.jobDescription}>{jobOpenings[0].jobDescription}</h3>
+                <div className={styles.thumbs}>
+                    <div className={styles.thumbsUp}><i className="fas fa-thumbs-up"></i></div>
+                    <div className={styles.thumbsDown}><i class="fas fa-thumbs-down"></i></div>
+                </div>
             </div>
         </div>
     )

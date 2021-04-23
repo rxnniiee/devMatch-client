@@ -11,6 +11,7 @@ import EmployeeMatches from "./EmployeePages/EmployeeMatches/EmployeeMatches";
 import Profile from "../EmployeeProfile/EeProfile";
 import Offer from "../JobOffer/JobOffer"
 import CreateProfile from "./CreateProfile/CreateProfile";
+import Header from '../Header/Header';
 
 //styles
 import styles from "./Main.module.scss";
@@ -31,19 +32,22 @@ const Main = () => {
         <Route path="/create-account/user" exact>
           <CreateAccountUser />
         </Route>
+        <Route path="/create-account/create-profile">
+          <CreateProfile />
+        </Route>
         <Route path="/login">
           <Login />
         </Route>
         <Route path="/employee/matches">
+          <Header />
           <EmployeeMatches />
         </Route>
-        <Route path="/create-account/create-profile">
-          <CreateProfile />
-        </Route>
         <Route path="/profile">
+          <Header />
           <Profile />
         </Route>
-        <Route path="/JobOpening">
+        <Route path="/jobopening">
+          <Header />
           <Offer />
         </Route>
       </Switch>
