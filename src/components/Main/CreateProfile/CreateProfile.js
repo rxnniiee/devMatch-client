@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./CreateProfile.module.scss";
 import useInput from "../hooks/useInput";
+import { Link } from 'react-router-dom'
 
 const validValue = (value) => value.trim() !== "";
 
@@ -115,7 +116,7 @@ const CreateProfile = (props) => {
           )}
         </div>
         <div>
-          <button disabled={!FormIsValid}>Confirm</button>
+        <Link to="/jobopening"><button disabled={!FormIsValid}>Confirm</button></Link>
         </div>
       </div>
     </form>
