@@ -24,7 +24,7 @@ const Login = () => {
                     <input required type="password" id="password" name="password"></input>
                 </div>
             </form>
-            <button onClick={onSubmitHandler}>Sign In</button>
+            <Link to="/jobopening"><button onClick={onSubmitHandler}>Sign In</button></Link>
         </div>
     )
 }

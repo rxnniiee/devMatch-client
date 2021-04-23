@@ -46,7 +46,8 @@ const Main = () => {
           <Header />
           <Profile />
         </Route>
-        <Route path="/JobOpening">
+        <Route path="/jobopening">
+          <Header />
           <Offer />
         </Route>
       </Switch>
