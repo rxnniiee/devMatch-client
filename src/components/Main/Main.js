@@ -9,6 +9,7 @@ import CreateAccountCompany from "./CreateAccount/CreateAccountCompany/CreateAcc
 import CreateAccountUser from "./CreateAccount/CreateAccountUser/CreateAccountUser";
 import EmployeeMatches from "./EmployeePages/EmployeeMatches/EmployeeMatches";
 import Profile from "../EmployeeProfile/EeProfile";
+import Offer from "../JobOffer/JobOffer"
 import CreateProfile from "./CreateProfile/CreateProfile";
 
 //styles
@@ -41,6 +42,9 @@ const Main = () => {
         </Route>
         <Route path="/profile">
           <Profile />
+        </Route>
+        <Route path="/JobOpening">
+          <Offer />
         </Route>
       </Switch>
     </div>
