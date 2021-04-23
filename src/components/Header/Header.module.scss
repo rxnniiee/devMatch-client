@@ -1,5 +1,16 @@
+@import '../scss/variables.scss';
+
 .Header {
-    position: fixed;
-    top: 0;
-    left: 0;
+    padding: .5rem;
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: space-between;
+
+        a{
+            text-decoration: none;
+            color: $text-dark;
+        }
+    }
 }

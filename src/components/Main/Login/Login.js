@@ -4,10 +4,9 @@ import styles from './Login.module.scss';
 
 const Login = () => {
 
-    const onSubmitHandler = (e) => {
-        e.preventDefault();
-        const username = e.target.username.value;
-        const password = e.target.password.value;
+    const onSubmitHandler = () => {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
         console.log('username: ' + username, 'password: ' + password);
     }
 
