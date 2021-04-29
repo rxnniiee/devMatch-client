@@ -3,6 +3,7 @@ import { useState } from "react";
 const useInput = (validateValue) => {
   const [entrValue, setEntrValue] = useState("");
   const [isToouched, setIsTouched] = useState(false);
+  const [skills, setSkills] = useState([]);
   const valueIsValid = validateValue(entrValue);
   const hasError = !valueIsValid && isToouched;
   const valueChangeHandler = (event) => {
@@ -15,6 +16,9 @@ const useInput = (validateValue) => {
     setEntrValue("");
     setIsTouched(false);
   };
+  const skillChangeHandler = (event) => {
+    setSkills([...skills, event.target.value])
+  }
   return {
     value: entrValue,
     hasError,
@@ -22,6 +26,8 @@ const useInput = (validateValue) => {
     valueChangeHandler,
     inputBlurHandler,
     reset,
+    skillChangeHandler,
+    skills
   };
 };
 export default useInput;
