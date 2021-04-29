@@ -2,6 +2,7 @@ export const CREATE_EMPLOYEE = 'CREATE_EMPLOYEE';
 export const CREATE_EMPLOYER = 'CREATE_EMPLOYER';
 export const ADD_CHAT = 'ADD_CHAT';
 export const ADD_MATCH = 'ADD_MATCH';
+export const ADD_TO_COUNT = 'ADD_TO_COUNT';
 
 export const addEmployee = (newEmployee) => {
     return (dispatch) => {
@@ -35,6 +36,14 @@ export const addMatch = (newMatch) => {
         dispatch({
             type: ADD_MATCH,
             payload: newMatch
+        })
+    }
+}
+
+export const addToCount = () => {
+    return (dispatch) => {
+        dispatch({
+            type: ADD_TO_COUNT
         })
     }
 }

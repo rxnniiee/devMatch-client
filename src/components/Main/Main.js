@@ -9,7 +9,7 @@ import CreateAccountCompany from "./CreateAccount/CreateAccountCompany/CreateAcc
 import CreateAccountUser from "./CreateAccount/CreateAccountUser/CreateAccountUser";
 import EmployeeMatches from "./EmployeePages/EmployeeMatches/EmployeeMatches";
 import Profile from "../EmployeeProfile/EeProfile";
-import Offer from "../JobOffer/JobOffer"
+import Offer from "../JobOffer/JobOffers"
 import CreateProfile from "./CreateProfile/CreateProfile";
 import Header from '../Header/Header';
 
