@@ -12,7 +12,6 @@ const Login = () => {
     }
 
     const onSubmitHandler = (e) => {
-        e.preventDefault();
         console.log(user);
     }
 

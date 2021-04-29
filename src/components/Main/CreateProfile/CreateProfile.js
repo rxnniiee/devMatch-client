@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 const validValue = (value) => value.trim() !== "";
 
 const CreateProfile = (props) => {
+
   const {
     value: entrName,
     hasError: entrNameError,
@@ -14,6 +15,7 @@ const CreateProfile = (props) => {
     inputBlurHandler: nameBlurHandler,
     reset: nameReset,
   } = useInput(validValue);
+
   const {
     value: entrLname,
     hasError: entrLnameError,
@@ -22,6 +24,7 @@ const CreateProfile = (props) => {
     inputBlurHandler: LnameBlurHandler,
     reset: LnameReset,
   } = useInput(validValue);
+
   const {
     value: entrDescribe,
     hasError: entrDescribeError,
@@ -30,6 +33,7 @@ const CreateProfile = (props) => {
     inputBlurHandler: describeBlurHandler,
     reset: describeReset,
   } = useInput(validValue);
+
   const {
     value: entrSkill,
     hasError: entrSkillError,
@@ -37,7 +41,9 @@ const CreateProfile = (props) => {
     valueChangeHandler: skillChangeHandler,
     inputBlurHandler: skillBlurHandler,
     reset: skillReset,
+    skills: skills
   } = useInput(validValue);
+
   let FormIsValid = false;
 
   if (nameValid && LnameValid && describeValid && skillValid) {
@@ -46,6 +52,8 @@ const CreateProfile = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+
+    console.log(skills)
 
     if (!FormIsValid) {
       return;
@@ -116,7 +124,7 @@ const CreateProfile = (props) => {
           )}
         </div>
         <div>
-        <Link to="/jobopening"><button disabled={!FormIsValid}>Confirm</button></Link>
+        <button disabled={!FormIsValid}>Confirm</button>
         </div>
       </div>
     </form>
