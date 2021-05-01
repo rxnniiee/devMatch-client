@@ -1,21 +1,22 @@
-@import '../scss/variables.scss';
+@import "../scss/variables.scss";
 
 .Header {
-    padding: 1rem;
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    font-size: 1.2rem;
+  padding: 1rem 0.5rem;
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: bold;
 
-    ul {
-        display: flex;
-        list-style-type: none;
-        justify-content: space-between;
+  ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
 
-        a{
-            text-decoration: none;
-            color: $text-dark;
-            color: white;
-        }
+    a {
+      text-decoration: none;
+      color: $text-dark;
+      color: white;
     }
+  }
 }
