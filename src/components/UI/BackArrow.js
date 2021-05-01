@@ -1,9 +1,11 @@
 import styles from "./BackArrow.module.scss";
 import { Link } from "react-router-dom";
 
-const BackArrow = () => {
+const BackArrow = (props) => {
   return (
-    <div className={styles.backArrow}>
+    <div
+      className={`{styles.backArrow} ${props.className ? props.className : ""}`}
+    >
       <Link to="/">back</Link>
     </div>
   );

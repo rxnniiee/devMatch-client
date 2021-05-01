@@ -3,6 +3,7 @@ import styles from "./CreateProfile.module.scss";
 import useInput from "../hooks/useInput";
 import { Link } from "react-router-dom";
 import BackArrow from "../../UI/BackArrow";
+import Button from "../../UI/Button";
 
 const validValue = (value) => value.trim() !== "";
 
@@ -66,7 +67,7 @@ const CreateProfile = (props) => {
   return (
     <form onSubmit={submitHandler}>
       <div className={styles.control}>
-        <BackArrow />
+        <BackArrow className={styles.arrow} />
         <h1>Create Profile</h1>
         <div className={styles.Form}>
           <label htmlFor="name">First Name</label>
@@ -120,14 +121,13 @@ const CreateProfile = (props) => {
             <option value="skill3">Skill3</option>
             <option value="skill4">Skill4</option>
           </select>
-          {entrSkillError && (
+          {/* {entrSkillError && (
             <p className={styles.error}>Please choose a skill</p>
-          )}
+          )} */}
         </div>
         <div>
           <Link to="/profile">
-            {/* <button disabled={!FormIsValid}>Confirm</button> */}
-            <button>Confirm</button>
+            <Button disabled={!FormIsValid}>Confirm</Button>
           </Link>
         </div>
       </div>
