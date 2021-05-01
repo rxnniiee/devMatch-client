@@ -9,16 +9,14 @@ import CreateAccountCompany from "./CreateAccount/CreateAccountCompany/CreateAcc
 import CreateAccountUser from "./CreateAccount/CreateAccountUser/CreateAccountUser";
 import EmployeeMatches from "./EmployeePages/EmployeeMatches/EmployeeMatches";
 import Profile from "../EmployeeProfile/EeProfile";
-import Offer from "../JobOffer/JobOffers"
+import Offer from "../JobOffer/JobOffers";
 import CreateProfile from "./CreateProfile/CreateProfile";
-import Header from '../Header/Header';
-
-//styles
-import styles from "./Main.module.scss";
+import Header from "../Header/Header";
+import Card from "../UI/Card";
 
 const Main = () => {
   return (
-    <div className={styles.Main}>
+    <>
       <Switch>
         <Route path="/" exact>
           <LandingPage />
@@ -51,7 +49,7 @@ const Main = () => {
           <Offer />
         </Route>
       </Switch>
-    </div>
+    </>
   );
 };
 
