@@ -1,11 +1,8 @@
-import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import React from "react";
 import styles from "./JobOffer.module.scss"
-import { useSelector } from 'react-redux';
 import SingleJoboffer from './SingleJobOffer';
 
 const Offers =() => {
-    const [count, setCount] = useState(0);
 
     return (
         <div className={`${styles.queue}`}>

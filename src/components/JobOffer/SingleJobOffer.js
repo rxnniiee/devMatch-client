@@ -13,6 +13,10 @@ export default function SingleJobOffer({isPrevious}) {
         return null
     }
 
+    if(isPrevious) {
+
+    }
+
     //out of jobs? tough luck..
     if(count >= jobOpenings.length){
         return <h1>{isPrevious && 'No more openings'}</h1>
