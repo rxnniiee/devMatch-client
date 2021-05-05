@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./CreateProfile.module.scss";
 import useInput from "../hooks/useInput";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import BackArrow from "../../UI/BackArrow";
+import Button from "../../UI/Button";
 
 const validValue = (value) => value.trim() !== "";
 
 const CreateProfile = (props) => {
-
   const {
     value: entrName,
     hasError: entrNameError,
@@ -41,7 +42,7 @@ const CreateProfile = (props) => {
     valueChangeHandler: skillChangeHandler,
     inputBlurHandler: skillBlurHandler,
     reset: skillReset,
-    skills: skills
+    skills: skills,
   } = useInput(validValue);
 
   let FormIsValid = false;
@@ -53,7 +54,7 @@ const CreateProfile = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    console.log(skills)
+    console.log(skills);
 
     if (!FormIsValid) {
       return;
@@ -66,6 +67,7 @@ const CreateProfile = (props) => {
   return (
     <form onSubmit={submitHandler}>
       <div className={styles.control}>
+        <BackArrow className={styles.arrow} />
         <h1>Create Profile</h1>
         <div className={styles.Form}>
           <label htmlFor="name">First Name</label>
@@ -119,12 +121,14 @@ const CreateProfile = (props) => {
             <option value="skill3">Skill3</option>
             <option value="skill4">Skill4</option>
           </select>
-          {entrSkillError && (
+          {/* {entrSkillError && (
             <p className={styles.error}>Please choose a skill</p>
-          )}
+          )} */}
         </div>
         <div>
-        <button disabled={!FormIsValid}>Confirm</button>
+          <Link to="/profile">
+            <Button disabled={!FormIsValid}>Confirm</Button>
+          </Link>
         </div>
       </div>
     </form>
