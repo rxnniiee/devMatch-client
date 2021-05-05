@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./CreateAccountUser.module.scss";
 import { Link } from "react-router-dom";
+import BackArrow from "../../../UI/BackArrow";
+import Button from "../../../UI/Button";
 
 export default function CreateAccountUser() {
   const onSubmitHandler = (e) => {
@@ -16,7 +18,7 @@ export default function CreateAccountUser() {
 
   return (
     <div className={styles.CreateAccountUser}>
-      <div className={styles.backArrow}><Link to="/create-account">back</Link></div>
+      <BackArrow />
       <form onSubmit={onSubmitHandler}>
         <h3>Create Account</h3>
 
@@ -41,7 +43,7 @@ export default function CreateAccountUser() {
         </div>
 
         <Link to="create-profile">
-          <button>Create Account</button>
+          <Button className={styles.button}>CREATE ACCOUNT</Button>
         </Link>
       </form>
     </div>

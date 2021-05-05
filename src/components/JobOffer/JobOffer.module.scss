@@ -1,153 +1,146 @@
-@import '../scss/variables.scss';
+@import "../scss/variables.scss";
 
 .fadeIn {
-    animation: fadeIn .5s ease-out;
+  animation: fadeIn 0.5s ease-out;
 
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-            margin-left: 1000px;
-            transform: rotate(100deg)
-        }
-        100% {
-            opacity: 1;
-            margin-left: 0px;
-            transform: rotate(0deg)
-        }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      margin-left: 1000px;
+      transform: rotate(100deg);
     }
+    100% {
+      opacity: 1;
+      margin-left: 0px;
+      transform: rotate(0deg);
+    }
+  }
 }
 
 .queue {
-    padding: 4rem 0;
-    width: 100%;
-    min-height: 100vh;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    background: $linear-gradient;
-    color: white;
-    
-    .jobOfferCard {
-        background-color: white;
-        color: black;
-        border-radius: 30px;
-        width: 300px;
+  padding: 4rem 0;
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $linear-gradient;
+  color: white;
 
-        .jobDescription {
-            width: 250px;
-        }
+  .jobOfferCard {
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    width: 300px;
+
+    .jobDescription {
+      width: 250px;
     }
+  }
 
-    .previous {
-        animation: fadeOut .5s ease-out;
-        position: absolute;
+  .previous {
+    animation: fadeOut 0.5s ease-out;
+    position: absolute;
 
     @keyframes fadeOut {
-        0% {
-            opacity: 1;
-            margin-left: 0;
-            transform: rotate(0deg)
-        }
-        100% {
-            opacity: 0;
-            margin-left: -1000px;
-            transform: rotate(-100deg)
-        }
+      0% {
+        opacity: 1;
+        margin-left: 0;
+        transform: rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        margin-left: -1000px;
+        transform: rotate(-100deg);
+      }
     }
+  }
 
+  a {
+    text-decoration: none;
+    color: white;
+  }
 
+  .skills {
+    width: 250px;
+  }
+
+  .introduction {
+    border-radius: 30px;
+    line-height: 1.5;
+    width: 250px;
+  }
+
+  .city {
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: 90%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 1rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0.9rem;
+  }
+
+  h1 {
+    font: 1.3em sans-serif;
+    text-align: center;
+  }
+
+  h2 {
+    font: 0.8em sans-serif;
+  }
+
+  h3 {
+    font: 0.8em sans-serif;
+    width: 300px;
+    text-align: left;
+    padding-left: 1rem;
+  }
+
+  .thumbs {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 3rem;
+
+    &Up {
+      background-color: rgb(39, 151, 39);
+      width: 80px;
+      height: 80px;
+      color: white;
+      border-radius: 50%;
+
+      //center thumb in circle
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
+    &Down {
+      background-color: rgb(170, 49, 49);
+      width: 80px;
+      height: 80px;
+      color: white;
+      border-radius: 50%;
 
-
-    a {
-        text-decoration: none;
-        color: white;
+      //center thumb in circle
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-
-    .backArrow {
-        width: 100%;
-        padding: 0 2rem;
-    }
-
-    .skills {
-        width: 250px;
-    }
-
-    .introduction {
-        border-radius: 30px;
-        line-height: 1.5;
-        width: 250px;
-    }
-
-    .city {
-        margin-bottom: 1rem;
-    }
-
-    img {
-        width: 90%;
-        max-height: 300px;
-        object-fit: cover;
-        border-radius: 20px;
-        margin: 0 auto;
-        display: block;
-        margin-top: 1rem;
-    }
-
-    h1, h2, h3 {
-        margin: 0.5rem;
-    }
-
-    h1{
-        font: 1.3em sans-serif;
-        text-align: center;
-
-    }
-
-    h2{
-        font: 0.8em sans-serif;
-    }
-
-    h3 {
-        font: 0.8em sans-serif;
-        width: 300px;
-        text-align: left;
-    }
-
-    .thumbs {
-        width: 100%;
-        padding: 1rem;
-        display: flex;
-        justify-content: space-between;
-        font-size: 3rem;
-
-        &Up{
-            background-color: rgb(39, 151, 39);
-            width: 80px;
-            height: 80px;
-            color: white;
-            border-radius: 50%;
-
-            //center thumb in circle
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        &Down {
-            background-color: rgb(170, 49, 49);
-            width: 80px;
-            height: 80px;
-            color: white;
-            border-radius: 50%;
-
-            //center thumb in circle
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-        }
-    }
+  }
 }

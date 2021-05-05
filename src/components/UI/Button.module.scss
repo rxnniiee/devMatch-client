@@ -1,0 +1,27 @@
+@import "../scss/variables.scss";
+
+.button {
+  width: 200px;
+  border: none;
+  margin-bottom: 1.3rem;
+  border: none;
+  border: 1px solid #cf5c36;
+  border-radius: 40px;
+  box-sizing: border-box;
+  width: 315px;
+  height: 49px;
+  color: white;
+  //   background: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #cf5c36;
+  letter-spacing: 0.2rem;
+  &:hover,
+  &:focus {
+    background-color: white;
+    color: $btn;
+    transition: 0.5s all;
+  }
+}
