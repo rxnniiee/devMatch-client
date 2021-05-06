@@ -24,12 +24,24 @@ export default function CreateAccountUser() {
 
         <div className={styles.loginInputGroup}>
           <label htmlFor="email">Email*</label>
-          <input required type="email" id="email" name="email"></input>
+          <input
+            required
+            type="email"
+            id="email"
+            placeholder="Email"
+            name="email"
+          ></input>
         </div>
 
         <div className={styles.loginInputGroup}>
           <label htmlFor="password">Password*</label>
-          <input required type="password" id="password" name="password"></input>
+          <input
+            required
+            type="password"
+            placeholder="Password"
+            id="password"
+            name="password"
+          ></input>
         </div>
 
         <div className={styles.loginInputGroup}>
@@ -38,6 +50,7 @@ export default function CreateAccountUser() {
             required
             type="password"
             id="confirmPassword"
+            placeholder="Confirm Password"
             name="confirm-password"
           ></input>
         </div>
