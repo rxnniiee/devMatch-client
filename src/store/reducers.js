@@ -63,7 +63,7 @@ const intialStateEmployee = {
       image:
         "https://images.unsplash.com/photo-1528901166007-3784c7dd3653?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80",
       name: "Test Company",
-      speciality: "Full-Stack Developer",
+      specialty: "Full-Stack Developer",
       skills: ["HTML", "CSS", "Javascript", "React.JS", "Node.JS", "SQL"],
       jobType: "Full-Time",
       city: "Helsinki",
@@ -75,7 +75,7 @@ const intialStateEmployee = {
       image:
         "https://images.unsplash.com/photo-1528901166007-3784c7dd3653?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80",
       name: "Test Company 2",
-      speciality: "Full-Stack Developer",
+      specialty: "Full-Stack Developer",
       skills: ["HTML", "CSS", "Javascript", "React.JS", "Node.JS", "SQL"],
       jobType: "Full-Time",
       city: "Helsinki",
@@ -87,7 +87,7 @@ const intialStateEmployee = {
       image:
         "https://images.unsplash.com/photo-1528901166007-3784c7dd3653?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80",
       name: "Test Company 3",
-      speciality: "Full-Stack Developer",
+      specialty: "Full-Stack Developer",
       skills: ["HTML", "CSS", "Javascript", "React.JS", "Node.JS", "SQL"],
       jobType: "Full-Time",
       city: "Helsinki",
@@ -99,7 +99,7 @@ const intialStateEmployee = {
       image:
         "https://images.unsplash.com/photo-1528901166007-3784c7dd3653?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80",
       name: "Test Company 4",
-      speciality: "Full-Stack Developer",
+      specialty: "Full-Stack Developer",
       skills: ["HTML", "CSS", "Javascript", "React.JS", "Node.JS", "SQL"],
       jobType: "Full-Time",
       city: "Helsinki",
@@ -111,7 +111,7 @@ const intialStateEmployee = {
       image:
         "https://images.unsplash.com/photo-1528901166007-3784c7dd3653?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80",
       name: "Test Company 5",
-      speciality: "Full-Stack Developer",
+      specialty: "Full-Stack Developer",
       skills: ["HTML", "CSS", "Javascript", "React.JS", "Node.JS", "SQL"],
       jobType: "Full-Time",
       city: "Helsinki",

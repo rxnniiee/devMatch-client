@@ -1,52 +1,54 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react'
 import styles from './JobOffer.module.scss'
-import { addToCount } from '../../store/actions.js';
+import { useSelector, useDispatch } from 'react-redux'
 
-export default function SingleJobOffer({isPrevious}) {
-    const jobOpenings = useSelector(state => state.employee.queue)
-    const count = useSelector(state => state.count);
-    const dispatch = useDispatch();
-    
-    //don't render previous component first time
-    if(isPrevious && count === 0) {
-        return null
-    }
+export default function SingleJobOffer({ isPrevious }) {
+  const jobOpenings = useSelector((state) => state.employee.queue)
+  const count = useSelector((state) => state.count)
 
-    if(isPrevious) {
+  //don't render previous component first time
+  if (isPrevious && count === 0) {
+    return null
+  }
 
-    }
+  if (isPrevious) {
+  }
 
-    //out of jobs? tough luck..
-    if(count >= jobOpenings.length){
-        return <h1>{isPrevious && 'No more openings'}</h1>
-    }
+  //out of jobs? tough luck..
+  if (count >= jobOpenings.length) {
+    return <div className={styles.noMoreOffers}><h3 className={styles.noMoreText}>No more openings</h3></div>
+  }
 
-    return (
-        //key={Math.random()} makes the entire component mount again, it's needed to make the css styling (fade and rotate) trigger again
-        <div key={Math.random()} className={`${!isPrevious && styles.fadeIn} ${isPrevious && styles.previous} ${styles.jobOfferCard}`}>
+  return (
+    //key={Math.random()} makes the entire component mount again, it's needed to make the css styling (fade and rotate) trigger again
+    <div
+      key={Math.random()}
+      className={`${!isPrevious && styles.fadeIn} ${
+        isPrevious && styles.previous
+      } ${styles.jobOfferCard}`}
+    >
+      <img
+        alt={`${jobOpenings[count].name} Offer image`}
+        src={jobOpenings[count].image}
+      ></img>
 
-            <img alt={`${jobOpenings[count].name} Offer image`} src={jobOpenings[count].image}></img>
+      <div className={styles.jobInfo}>
+        <div className={styles.info}>
+          <h3>{jobOpenings[count].name}</h3>
+          <p><i class="fas fa-user"></i> {jobOpenings[count].specialty}</p>
 
-            <div>
-                <h1>{jobOpenings[count].name}</h1>
-                <h2>{jobOpenings[count].specialty}</h2>
-
-                <div className={styles.thumbs}>
-                    <div onClick={() => {dispatch(addToCount()); console.log(`thumbed up ${jobOpenings[count].name}`)} } className={styles.thumbsUp}><i className="fas fa-thumbs-up"></i></div>
-                    <div onClick={() => {dispatch(addToCount()); console.log(`thumbed down ${jobOpenings[count].name}`)} } className={styles.thumbsDown}><i class="fas fa-thumbs-down"></i></div>
-                </div>
-
-                <h2>Vacancy type: {jobOpenings[count].jobType}</h2>
-                <h2 className={styles.skills}>Skills: {jobOpenings[count].skills.map(skill => skill + ' ')}</h2>
-                <h2 className={styles.city}><i class="fas fa-map-marker-alt"></i> {jobOpenings[count].city}</h2>
-                <h2>Job description</h2>
-                <h3 className={styles.jobDescription}>{jobOpenings[count].jobDescription}</h3>
-                
-            </div>
+          <p><i class="fas fa-briefcase"></i> {jobOpenings[count].jobType}</p>
+          <p className={styles.skills}>
+          <i className="fas fa-star"></i> {jobOpenings[count].skills.map((skill) => skill + ' ')}
+          </p>
+          <p className={styles.city}>
+            <i className="fas fa-map-marker-alt"></i> {jobOpenings[count].city}
+          </p>
+          <p className={styles.jobDescription}>
+            {jobOpenings[count].jobDescription}
+          </p>
         </div>
-    )
+      </div>
+    </div>
+  )
 }
-
-
-
