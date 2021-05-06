@@ -27,6 +27,7 @@
     height: 5rem;
     width: 18rem;
     border-radius: 0.4rem;
+    padding: 0.4rem;
   }
   textarea:focus {
     outline: none;
@@ -43,6 +44,8 @@
   }
   .Form {
     padding-left: 1rem;
+    padding-bottom: 1rem;
+    width: 95%;
     label {
       display: block;
       padding: 2rem 1rem;
