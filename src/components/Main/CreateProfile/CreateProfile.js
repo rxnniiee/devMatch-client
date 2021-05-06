@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./CreateProfile.module.scss";
 import useInput from "../hooks/useInput";
 import { Link } from "react-router-dom";
 import BackArrow from "../../UI/BackArrow";
 import Button from "../../UI/Button";
+import Select from "react-select";
 
+const options = [
+  { value: "Skill1", label: "Skill1" },
+  { value: "Skill2", label: "Skill2" },
+  { value: "Skill3", label: "Skill3" },
+  { value: "Skill4", label: "Skill4" },
+];
 const validValue = (value) => value.trim() !== "";
 
 const CreateProfile = (props) => {
@@ -34,20 +41,10 @@ const CreateProfile = (props) => {
     inputBlurHandler: describeBlurHandler,
     reset: describeReset,
   } = useInput(validValue);
-
-  const {
-    value: entrSkill,
-    hasError: entrSkillError,
-    isValid: skillValid,
-    valueChangeHandler: skillChangeHandler,
-    inputBlurHandler: skillBlurHandler,
-    reset: skillReset,
-    skills: skills,
-  } = useInput(validValue);
-
+  const [skills, setSkills] = useState([]);
   let FormIsValid = false;
 
-  if (nameValid && LnameValid && describeValid && skillValid) {
+  if (nameValid && LnameValid && describeValid) {
     FormIsValid = true;
   }
 
@@ -62,8 +59,8 @@ const CreateProfile = (props) => {
 
     nameReset();
     LnameReset();
+    describeReset();
   };
-
   return (
     <form onSubmit={submitHandler}>
       <div className={styles.control}>
@@ -75,6 +72,7 @@ const CreateProfile = (props) => {
             id="fname"
             type="text"
             value={entrName}
+            placeholder="First Name"
             onChange={nameChangeHandler}
             onBlur={nameBlurHandler}
           />
@@ -87,6 +85,7 @@ const CreateProfile = (props) => {
           <input
             id="lname"
             type="text"
+            placeholder="Last Name"
             value={entrLname}
             onChange={LnameChangeHandler}
             onBlur={LnameBlurHandler}
@@ -100,6 +99,7 @@ const CreateProfile = (props) => {
           <textarea
             id="describe"
             type="text"
+            placeholder="Please describe yourself"
             value={entrDescribe}
             onChange={describeChangeHandler}
             onBlur={describeBlurHandler}
@@ -110,20 +110,17 @@ const CreateProfile = (props) => {
         </div>
         <div className={styles.Form}>
           <label htmlFor="name">Skills</label>
-          <select
-            value={entrSkill}
-            onChange={skillChangeHandler}
-            onBlur={skillBlurHandler}
-          >
-            <option value="skill0">...</option>
-            <option value="skill1">Skill1</option>
-            <option value="skill2">Skill2</option>
-            <option value="skill3">Skill3</option>
-            <option value="skill4">Skill4</option>
-          </select>
-          {/* {entrSkillError && (
-            <p className={styles.error}>Please choose a skill</p>
-          )} */}
+          <Select
+            options={options}
+            isMulti={true}
+            className={styles.Select}
+            isSearchable
+            placeholder="Select your skills..."
+            onChange={setSkills}
+            closeMenuOnSelect={false}
+            className="basic-multi-select"
+            classNamePrefix="select"
+          />
         </div>
         <div>
           <Link to="/profile">
