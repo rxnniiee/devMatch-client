@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import styles from "./LandingPage.module.scss";
 import Card from "../../UI/Card";
 import Button from "../../UI/Button";
+import Logo from "../../UI/Logo.svg";
 
 const LandingPage = () => {
   return (
     <Card className={styles.LandingPage}>
-      <h2>[LOGO]</h2>
+      <img src={Logo} alt="job up" />
       <Link to="/create-account">
         <Button className="styles">CREATE ACCOUNT</Button>
       </Link>
