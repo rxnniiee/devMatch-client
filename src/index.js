@@ -7,13 +7,13 @@ import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {
   countReducer,
-  employeeReducer,
+  talentReducer,
   employerReducer,
 } from "./store/reducers";
 import reduxThunk from "redux-thunk";
 
 const rootReducer = combineReducers({
-  employee: employeeReducer,
+  talent: talentReducer,
   employer: employerReducer,
   count: countReducer,
 });

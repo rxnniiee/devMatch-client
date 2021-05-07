@@ -1,22 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './JobOffer.module.scss'
 import { useSelector, useDispatch } from 'react-redux'
 
 export default function SingleJobOffer({ isPrevious }) {
-  const jobOpenings = useSelector((state) => state.employee.queue)
+  const jobOpenings = useSelector((state) => state.talent.queue)
   const count = useSelector((state) => state.count)
-
-  //don't render previous component first time
-  if (isPrevious && count === 0) {
-    return null
-  }
-
-  if (isPrevious) {
-  }
 
   //out of jobs? tough luck..
   if (count >= jobOpenings.length) {
     return <div className={styles.noMoreOffers}><h3 className={styles.noMoreText}>No more openings</h3></div>
+  }
+
+  if(!jobOpenings) {
+    return <h1>Loading...</h1>
   }
 
   return (
