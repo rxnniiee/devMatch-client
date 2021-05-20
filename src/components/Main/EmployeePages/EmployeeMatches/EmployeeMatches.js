@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'; //hook for redirecting inside onC
 import { useSelector } from 'react-redux';
 
 const EmployeeMatches = () => {
-    const matches = useSelector(state => state.employee.matches)
+    const matches = useSelector(state => state.talent.matches)
     let history = useHistory();
 
     const onClickHandler = (id) => {
@@ -24,7 +24,7 @@ const EmployeeMatches = () => {
                         <p className="ps-left">Preferable skills: </p>
                         {/* the slice hack is for removing the last item, but the last item is then added after the mapping, but without a comma sign */}
                         <p className="ps-right">{item.preferableSkills.map(skill => (`${skill}, `)).slice(0, -1)} {item.preferableSkills[item.preferableSkills.length - 1]}</p>
-                        <div className={styles.arrowWrapper}><i class="arrow fas fa-arrow-right"></i></div>
+                        <div className={styles.arrowWrapper}><i className="arrow fas fa-arrow-right"></i></div>
                     </div>
                 </div>
             ))}

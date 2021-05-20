@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
+import React, { useState } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 //components
 import LandingPage from "./LandingPage/LandingPage";
@@ -13,42 +13,72 @@ import Offer from "../JobOffer/JobOffers";
 import CreateProfile from "./CreateProfile/CreateProfile";
 import Header from "../Header/Header";
 import Card from "../UI/Card";
+import useToken from './hooks/useToken.js';
+import useUser from './hooks/useUser.js';
 
 const Main = () => {
+  const { token, setToken } = useToken();
+  const { user, setUser } = useUser();
+
+  if (!token) {
+    console.log(token)
+
+    return <Switch>
+
+      <Route path="/" exact>
+        <LandingPage />
+      </Route>
+
+      <Route path="/create-account" exact>
+        <CreateAccount />
+      </Route>
+
+      <Route path="/create-account/company" exact>
+        <CreateAccountCompany />
+      </Route>
+
+      <Route path="/create-account/user" exact>
+        <CreateAccountUser />
+      </Route>
+
+      <Route path="/create-account/create-profile">
+        <CreateProfile user={user} />
+      </Route>
+
+      <Route path="/login">
+        <Login setToken={setToken} setUser={setUser} />
+      </Route>
+
+      <Redirect to='/' />
+
+    </Switch>
+  }
+
+
+
   return (
     <>
+    <Header />
       <Switch>
-        <Route path="/" exact>
-          <LandingPage />
-        </Route>
-        <Route path="/create-account" exact>
-          <CreateAccount />
-        </Route>
-        <Route path="/create-account/company" exact>
-          <CreateAccountCompany />
-        </Route>
-        <Route path="/create-account/user" exact>
-          <CreateAccountUser />
-        </Route>
-        <Route path="/create-account/create-profile">
-          <CreateProfile />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
+
+      <Route path="/create-account/create-profile">
+        <CreateProfile user={user} />
+      </Route>
+
         <Route path="/employee/matches">
-          <Header />
           <EmployeeMatches />
         </Route>
+
         <Route path="/profile">
-          <Header />
-          <Profile />
+          <Profile setToken={setToken} setUser={setUser} />
         </Route>
-        <Route path="/jobopening">
-          <Header />
+
+        <Route path="/jobopenings">
           <Offer />
         </Route>
+
       </Switch>
+
     </>
   );
 };

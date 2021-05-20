@@ -1,7 +1,7 @@
 //react
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 
 //styles
 import styles from './Login.module.scss';
@@ -12,25 +12,30 @@ import Button from '../../UI/Button';
 //backend api
 import * as api from '../../../api/index.js';
 
-const Login = () => {
+require('dotenv').config()
+
+const Login = ({setToken, setUser}) => {
   const history = useHistory()
 
-  const [user, setUser] = useState({ username: '', password: '' })
+  const [login, setLogin] = useState({ username: '', password: '' })
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target
-    setUser({ ...user, [name]: value })
+    setLogin({ ...login, [name]: value })
   }
 
   const onSubmitHandler = (e) => {
     e.preventDefault()
-    console.log(user)
 
-    //make call to backend woth username and password
-    api.login(user)
-
-    //redirect to jobopenings
-    history.push('/jobopening')
+    //make call to backend with username and password
+    api.login(login)
+    .then(response => {
+      console.log(response.data)
+      setToken(response.data.token)
+      setUser(response.data.talent._id)
+      history.push('/jobopenings')
+    })
+    .catch(error => console.log(error))
   }
 
   return (
@@ -70,3 +75,8 @@ const Login = () => {
 }
 
 export default Login
+
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired,
+  setuser: PropTypes.func.isRequired
+};

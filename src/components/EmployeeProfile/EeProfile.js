@@ -1,11 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useHistory, Redirect, Link } from "react-router-dom";
 import styles from "./EeProfile.module.scss";
 import { useSelector } from "react-redux";
 import Button from "../UI/Button";
 
-const Profile = () => {
-  const employeeProfile = useSelector((state) => state.employee.profile);
+const Profile = ({setUser, setToken}) => {
+  const employeeProfile = useSelector((state) => state.talent.profile);
+  const history = useHistory();
+
+  const signOutHandler = () => {
+    setUser('');
+    setToken('');
+  }
+
+  const editProfileHandler = () => {
+    history.push('/create-account/create-profile');
+  }
 
   return (
     <div className={styles.profile}>
@@ -21,12 +31,15 @@ const Profile = () => {
           Skills: {employeeProfile.skills.map((skill) => skill + " ")}
         </h2>
         <h2 className={styles.city}>
-          From: <i class="fas fa-map-marker-alt"></i> {employeeProfile.city}
+          From: <i className="fas fa-map-marker-alt"></i> {employeeProfile.city}
         </h2>
         <h2>Introduction</h2>
         <h3 className={styles.introduction}>{employeeProfile.introduction}</h3>
       </div>
-      <Button>Ok</Button>
+      <div className={styles.btnGroup}>
+      <Button onClick={signOutHandler}>Sign out</Button>
+      <Button onClick={editProfileHandler}>Edit Profile</Button>
+      </div>
     </div>
   );
 };
