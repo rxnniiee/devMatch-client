@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // const url = 'https://bch-devmatch-server-develop.rxnniiee.dev/'
-const url = 'http://localhost:5000';
-// const url = 'https://jobupbackend.herokuapp.com';
+// const url = 'http://localhost:5000';
+const url = 'https://jobupbackend.herokuapp.com';
 
 //From MongoDB Backe-end
 //Talent endpoints
