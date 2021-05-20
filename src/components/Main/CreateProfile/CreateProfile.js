@@ -1,7 +1,7 @@
 //React
 import React, { useState } from "react";
 import styles from "./CreateProfile.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Select from "react-select";
 
 //components
@@ -24,6 +24,7 @@ const validValue = (value) => value.trim() !== "";
 
 const CreateProfile = (props) => {
   const { user } = useUser();
+  const history = useHistory();
 
   const {
     value: entrName,
@@ -72,11 +73,11 @@ const CreateProfile = (props) => {
     console.log(user);
 
     api.updateTalent(user, talentProfile)
-    .then(response => console.log(response))
+    .then(() => history.push('/profile'))
 
-    // nameReset();
-    // LnameReset();
-    // describeReset();
+    nameReset();
+    LnameReset();
+    describeReset();
   };
 
   return (
