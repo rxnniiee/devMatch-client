@@ -21,7 +21,6 @@ const Main = () => {
   const { user, setUser } = useUser();
 
   if (!token) {
-    console.log(token)
 
     return <Switch>
 

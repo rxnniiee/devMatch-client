@@ -7,13 +7,13 @@ const Header = () => {
     <div className={styles.Header}>
       <ul>
         <li>
-          <Link to="/profile">Profile</Link>
+          <Link to="/profile">Profile <i className="fas fa-user"></i></Link>
         </li>
         <li>
-          <Link to="/jobopenings">Search</Link>
+          <Link to="/jobopenings">Search <i className="fas fa-search"></i></Link>
         </li>
         <li>
-          <Link to="/employee/matches">Matches</Link>
+          <Link to="/employee/matches">Matches <i className="fas fa-thumbs-up"></i></Link>
         </li>
       </ul>
     </div>

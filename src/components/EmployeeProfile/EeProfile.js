@@ -35,19 +35,18 @@ const Profile = ({ setUser, setToken }) => {
           alt={`${employeeProfile.name} profile image`}
           src={employeeProfile.image}
         ></img>
-        {profileInfo.firstname && <div className={styles.back}>
-          <h1>{profileInfo.firstname} {profileInfo.lastname}</h1>
-          <h2 className={styles.skills}>
-            Skills: {profileInfo.skills.map((skill) => skill.value + " ")}
-          </h2>
-          <h2>Introduction</h2>
-          <h3 className={styles.introduction}>{profileInfo.bio}</h3>
-        </div>}
-        {!profileInfo.firstname && <h1>No info yet</h1>}
-        <div className={styles.btnGroup}>
-          <Button onClick={signOutHandler}>Sign out</Button>
-          <Button onClick={editProfileHandler}>Edit Profile</Button>
-        </div>
+          {profileInfo.firstname && <div className={styles.back}>
+            <h1>{profileInfo.firstname} {profileInfo.lastname}</h1>
+            <h2 className={styles.skills}>
+            <i className="fas fa-star"></i> {profileInfo.skills.map((skill) => skill.value + " ")}
+            </h2>
+            <h3 className={styles.introduction}>{profileInfo.bio}</h3>
+          </div>}
+          {!profileInfo.firstname && <h1>No info yet</h1>}
+          <div className={styles.btnGroup}>
+            <Button onClick={signOutHandler}><i className="fas fa-sign-out-alt"></i></Button>
+            <Button onClick={editProfileHandler}><i className="fas fa-user-edit"></i></Button>
+          </div>
       </div>
     </div>
   );

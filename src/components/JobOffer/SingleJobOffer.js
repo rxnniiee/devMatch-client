@@ -30,16 +30,21 @@ export default function SingleJobOffer({ isPrevious }) {
 
       <div className={styles.jobInfo}>
         <div className={styles.info}>
+
           <h3>{jobOpenings[count].name}</h3>
+
           <p><i className="fas fa-user"></i> {jobOpenings[count].specialty}</p>
 
           <p><i className="fas fa-briefcase"></i> {jobOpenings[count].jobType}</p>
+
           <p className={styles.skills}>
-          <i className="fas fa-star"></i> {jobOpenings[count].skills.map((skill) => skill + ' ')}
+            <i className="fas fa-star"></i> {jobOpenings[count].skills.map((skill) => skill + ' ')}
           </p>
+
           <p className={styles.city}>
             <i className="fas fa-map-marker-alt"></i> {jobOpenings[count].city}
           </p>
+
           <p className={styles.jobDescription}>
             {jobOpenings[count].jobDescription}
           </p>

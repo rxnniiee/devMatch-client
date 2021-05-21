@@ -30,7 +30,6 @@ const Login = ({setToken, setUser}) => {
     //make call to backend with username and password
     api.login(login)
     .then(response => {
-      console.log(response.data)
       setToken(response.data.token)
       setUser(response.data.talent._id)
       history.push('/jobopenings')
