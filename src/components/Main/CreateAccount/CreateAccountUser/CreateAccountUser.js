@@ -1,25 +1,37 @@
 import React, { useState } from "react";
 import styles from "./CreateAccountUser.module.scss";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import BackArrow from "../../../UI/BackArrow";
 import Button from "../../../UI/Button";
+import * as api from '../../../../api/index.js';
 
 export default function CreateAccountUser() {
-  const onSubmitHandler = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    const confirmPassword = e.target.confirmPassword.value;
-    console.log(
-      "email: " + email,
-      ", password: " + password + ", confirmed password: " + confirmPassword
-    );
+  const [talent, setTalent] = useState({});
+  const history = useHistory();
+
+  const onChangeHandler = (e) => {
+    setTalent({...talent, [e.target.name]: e.target.value})
+  }
+
+  const onSubmitHandler = () => {
+    if(talent.password !== talent.confirmPassword){
+      console.log('passwords did not match')
+      return
+    }
+    
+    console.log(talent);
+    api.signupTalent({username: talent.email, password: talent.password})
+    .then(response => {
+      console.log(response)
+      history.push('/login')
+    })
+    .catch(error => console.log(error))
   };
 
   return (
     <div className={styles.CreateAccountUser}>
       <BackArrow />
-      <form onSubmit={onSubmitHandler}>
+      <form>
         <h3>Create Account</h3>
 
         <div className={styles.loginInputGroup}>
@@ -30,6 +42,7 @@ export default function CreateAccountUser() {
             id="email"
             placeholder="Email"
             name="email"
+            onChange={onChangeHandler}
           ></input>
         </div>
 
@@ -41,23 +54,23 @@ export default function CreateAccountUser() {
             placeholder="Password"
             id="password"
             name="password"
+            onChange={onChangeHandler}
           ></input>
         </div>
 
         <div className={styles.loginInputGroup}>
-          <label htmlFor="confrim-password">Confirm Password*</label>
+          <label htmlFor="confirmPassword">Confirm Password*</label>
           <input
             required
             type="password"
             id="confirmPassword"
             placeholder="Confirm Password"
-            name="confirm-password"
+            name="confirmPassword"
+            onChange={onChangeHandler}
           ></input>
         </div>
 
-        <Link to="create-profile">
-          <Button className={styles.button}>CREATE ACCOUNT</Button>
-        </Link>
+        <Button onClick={onSubmitHandler} type="submit" className={styles.button}>CREATE ACCOUNT</Button>
       </form>
     </div>
   );

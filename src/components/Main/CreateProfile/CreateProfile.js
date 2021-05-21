@@ -1,20 +1,31 @@
+//React
 import React, { useState } from "react";
 import styles from "./CreateProfile.module.scss";
-import useInput from "../hooks/useInput";
-import { Link } from "react-router-dom";
-import BackArrow from "../../UI/BackArrow";
-import Button from "../../UI/Button";
+import { Link, useHistory } from "react-router-dom";
 import Select from "react-select";
 
-const options = [
-  { value: "Skill1", label: "Skill1" },
-  { value: "Skill2", label: "Skill2" },
-  { value: "Skill3", label: "Skill3" },
-  { value: "Skill4", label: "Skill4" },
-];
+//components
+import BackArrow from "../../UI/BackArrow";
+import Button from "../../UI/Button";
+
+//constants
+import { skills}  from '../../../constants/skills.js';
+
+//api
+import * as api from '../../../api/index.js';
+
+//Hooks
+import useInput from "../hooks/useInput";
+import useUser from '../hooks/useUser';
+
+const options = skills.map(skill => ({value: skill, label: skill}))
+
 const validValue = (value) => value.trim() !== "";
 
 const CreateProfile = (props) => {
+  const { user } = useUser();
+  const history = useHistory();
+
   const {
     value: entrName,
     hasError: entrNameError,
@@ -41,7 +52,9 @@ const CreateProfile = (props) => {
     inputBlurHandler: describeBlurHandler,
     reset: describeReset,
   } = useInput(validValue);
+
   const [skills, setSkills] = useState([]);
+
   let FormIsValid = false;
 
   if (nameValid && LnameValid && describeValid) {
@@ -51,23 +64,32 @@ const CreateProfile = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    console.log(skills);
-
     if (!FormIsValid) {
       return;
     }
+
+    const talentProfile = {firstname: entrName, lastname: entrLname, bio: entrDescribe, skills};
+
+    console.log(user);
+
+    api.updateTalent(user, talentProfile)
+    .then(() => history.push('/profile'))
 
     nameReset();
     LnameReset();
     describeReset();
   };
+
   return (
-    <form onSubmit={submitHandler}>
+    <form>
+
       <div className={styles.control}>
         <BackArrow className={styles.arrow} />
         <h1>Create Profile</h1>
         <div className={styles.Form}>
+
           <label htmlFor="name">First Name</label>
+
           <input
             id="fname"
             type="text"
@@ -80,6 +102,7 @@ const CreateProfile = (props) => {
             <p className={styles.error}>Please enter yor name</p>
           )}
         </div>
+
         <div className={styles.Form}>
           <label htmlFor="name">Last Name</label>
           <input
@@ -94,6 +117,7 @@ const CreateProfile = (props) => {
             <p className={styles.error}>Please enter yor Last Name</p>
           )}
         </div>
+
         <div className={styles.Form}>
           <label htmlFor="name">Describe Yourself</label>
           <textarea
@@ -105,9 +129,10 @@ const CreateProfile = (props) => {
             onBlur={describeBlurHandler}
           />
           {entrDescribeError && (
-            <p className={styles.error}>Please describe YourSelf</p>
+            <p className={styles.error}>Please describe Yourself</p>
           )}
         </div>
+
         <div className={styles.Form}>
           <label htmlFor="name">Skills</label>
           <Select
@@ -121,13 +146,11 @@ const CreateProfile = (props) => {
             className="basic-multi-select"
             classNamePrefix="select"
           />
+
         </div>
-        <div>
-          <Link to="/profile">
-            <Button disabled={!FormIsValid}>Confirm</Button>
-          </Link>
-        </div>
+          <Button onClick={submitHandler} disabled={!FormIsValid}>Confirm</Button>
       </div>
+
     </form>
   );
 };

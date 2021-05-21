@@ -6,22 +6,24 @@ const useInput = (validateValue) => {
   const [skills, setSkills] = useState([]);
   const valueIsValid = validateValue(entrValue);
   const hasError = !valueIsValid && isToouched;
+
   const valueChangeHandler = (event) => {
     setEntrValue(event.target.value);
-    console.log(event.target.value);
   };
+
   const inputBlurHandler = (event) => {
     setIsTouched(true);
   };
+
   const reset = () => {
     setEntrValue("");
     setIsTouched(false);
   };
+
   const skillChangeHandler = (value) => {
     setSkills([...skills, value]);
-    console.log(skills);
-    console.log(setSkills);
   };
+
   return {
     value: entrValue,
     hasError,
@@ -33,4 +35,5 @@ const useInput = (validateValue) => {
     skills,
   };
 };
+
 export default useInput;

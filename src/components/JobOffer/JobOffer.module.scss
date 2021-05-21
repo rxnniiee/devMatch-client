@@ -1,4 +1,4 @@
-@import "../scss/variables.scss";
+@import '../scss/variables.scss';
 
 .fadeIn {
   animation: fadeIn 0.5s ease-out;
@@ -7,38 +7,60 @@
     0% {
       opacity: 0;
       margin-left: 1000px;
-      transform: rotate(100deg);
     }
     100% {
       opacity: 1;
       margin-left: 0px;
-      transform: rotate(0deg);
     }
   }
 }
 
+.noMoreOffers {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  .noMoreText {
+    color: white;
+    font-size: 2rem;
+  }
+}
+
 .queue {
-  padding: 4rem 0;
   width: 100%;
-  min-height: 100vh;
-  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: $linear-gradient;
   color: white;
+  padding-top: 50px; 
 
   .jobOfferCard {
     background-color: white;
     color: black;
-    border-radius: 30px;
-    width: 300px;
-
-    .jobDescription {
-      width: 250px;
-    }
+    width: 100%;
+    padding-bottom: 3rem;
   }
+
+  .jobInfo {
+    width: 300px;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+  }
+
+  h3 {
+    margin: 1rem 0;
+    color: $text-dark;
+  }
+
+  p {
+    color: $text-darkgray;
+  }
+
 
   .previous {
     animation: fadeOut 0.5s ease-out;
@@ -48,12 +70,10 @@
       0% {
         opacity: 1;
         margin-left: 0;
-        transform: rotate(0deg);
       }
       100% {
         opacity: 0;
         margin-left: -1000px;
-        transform: rotate(-100deg);
       }
     }
   }
@@ -67,10 +87,9 @@
     width: 250px;
   }
 
-  .introduction {
-    border-radius: 30px;
-    line-height: 1.5;
-    width: 250px;
+  .jobDescription {
+    border-top: 1px solid $text-darkgray;
+    padding-top: 1rem;
   }
 
   .city {
@@ -78,69 +97,22 @@
   }
 
   img {
-    width: 90%;
+    width: 100%;
     max-height: 300px;
     object-fit: cover;
-    border-radius: 20px;
     margin: 0 auto;
     display: block;
-    margin-top: 1rem;
   }
+}
 
-  h1,
-  h2,
-  h3 {
-    margin: 0.9rem;
-  }
+@media only screen and (min-width: 768px) {
 
-  h1 {
-    font: 1.3em sans-serif;
-    text-align: center;
-  }
+  .queue {
 
-  h2 {
-    font: 0.8em sans-serif;
-  }
-
-  h3 {
-    font: 0.8em sans-serif;
-    width: 300px;
-    text-align: left;
-    padding-left: 1rem;
-  }
-
-  .thumbs {
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    font-size: 3rem;
-
-    &Up {
-      background-color: rgb(39, 151, 39);
-      width: 80px;
-      height: 80px;
-      color: white;
-      border-radius: 50%;
-
-      //center thumb in circle
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    &Down {
-      background-color: rgb(170, 49, 49);
-      width: 80px;
-      height: 80px;
-      color: white;
-      border-radius: 50%;
-
-      //center thumb in circle
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    .jobOfferCard {
+      width: 70%;
+      box-shadow: 0 0 10px 0 rgb(78, 78, 78);
+      margin: 0 0 6rem 0;
     }
   }
 }

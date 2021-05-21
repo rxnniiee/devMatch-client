@@ -1,19 +1,42 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import styles from "./Login.module.scss";
-import Button from "../../UI/Button";
+//react
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Login = () => {
-  const [user, setUser] = useState();
+//styles
+import styles from './Login.module.scss';
+
+//components
+import Button from '../../UI/Button';
+
+//backend api
+import * as api from '../../../api/index.js';
+
+require('dotenv').config()
+
+const Login = ({setToken, setUser}) => {
+  const history = useHistory()
+
+  const [login, setLogin] = useState({ username: '', password: '' })
 
   const onChangeHandler = (e) => {
-    const { name, value } = e.target;
-    setUser({ ...user, [name]: value });
-  };
+    const { name, value } = e.target
+    setLogin({ ...login, [name]: value })
+  }
 
   const onSubmitHandler = (e) => {
-    console.log(user);
-  };
+    e.preventDefault()
+
+    //make call to backend with username and password
+    api.login(login)
+    .then(response => {
+      console.log(response.data)
+      setToken(response.data.token)
+      setUser(response.data.talent._id)
+      history.push('/jobopenings')
+    })
+    .catch(error => console.log(error))
+  }
 
   return (
     <div className={styles.Login}>
@@ -21,6 +44,7 @@ const Login = () => {
         <div className={styles.backArrow}>
           <Link to="/">back</Link>
         </div>
+
         <h3>Sign In</h3>
         <div className={styles.loginInputGroup}>
           <label htmlFor="username">Username</label>
@@ -45,11 +69,14 @@ const Login = () => {
           ></input>
         </div>
       </form>
-      <Link to="/jobopening">
         <Button onClick={onSubmitHandler}>Sign In</Button>
-      </Link>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
+
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired,
+  setuser: PropTypes.func.isRequired
+};
