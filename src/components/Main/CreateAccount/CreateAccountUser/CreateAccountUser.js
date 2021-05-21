@@ -18,11 +18,9 @@ export default function CreateAccountUser() {
       console.log('passwords did not match')
       return
     }
-    
-    console.log(talent);
+
     api.signupTalent({username: talent.email, password: talent.password})
     .then(response => {
-      console.log(response)
       history.push('/login')
     })
     .catch(error => console.log(error))

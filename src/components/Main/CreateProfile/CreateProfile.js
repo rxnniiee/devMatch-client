@@ -68,9 +68,7 @@ const CreateProfile = (props) => {
       return;
     }
 
-    const talentProfile = {firstname: entrName, lastname: entrLname, bio: entrDescribe, skills};
-
-    console.log(user);
+    const talentProfile = {firstname: entrName, lastname: entrLname, bio: entrDescribe, skills}
 
     api.updateTalent(user, talentProfile)
     .then(() => history.push('/profile'))

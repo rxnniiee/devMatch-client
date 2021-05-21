@@ -3,7 +3,7 @@
 .profile {
   width: 100%;
   background: $linear-gradient;
-  color: black;
+  color: $text-darkgray;
   font-size: 1.3rem;
   min-height: calc(100vh + 25px);
   height: fit-content;
@@ -15,7 +15,7 @@
     top: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
     background-color: whitesmoke;
     margin: 0 auto;
@@ -60,6 +60,9 @@
     h3 {
       font: 0.8em sans-serif;
       text-align: left;
+      border-top: 1px solid grey;
+      padding-top: 1rem;
+      margin-top: 1rem;
     }
   }
 }
@@ -70,7 +73,7 @@
   width: 90%;
   div {
     margin: 1rem;
-    font-size: .9rem;
+    font-size: 1.2rem;
   }
 }
 
